@@ -4,7 +4,7 @@ menuTitle: gyneco2d
 ---
 
 ## このひと
-情報系大学生．最近なにがしたいかわからなくなってきた．つよくなりたい．
+情報系学部生．最近なにがしたいかわからなくなってきた．とりあえずつよくなりたい．
 
 ## GitHub
 [https://github.com/gyneco2d](https://github.com/gyneco2d)
