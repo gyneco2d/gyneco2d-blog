@@ -23,10 +23,6 @@ cover: settings.jpg
     telemetryConsent: "limited"
   editor:
     tabLength: 4
-  "exception-reporting":
-    userId: "889160bf-e2e3-466e-8f04-437dcde66029"
-  welcome:
-    showOnStartup: false
 ```
 
 `.jsx`ファイルがJavaScript，`.jad`ファイルがJavaとして開くようになる．
