@@ -1,32 +1,32 @@
 const colors = require("../../src/styles/colors");
 
 module.exports = {
-  siteTitle: "PersonalBlog - a blog starter for GatsbyJS", // <title>
-  shortSiteTitle: "PersonalBlog GatsbyJS Starter", // <title> ending for posts and pages
-  siteDescription: "PersonalBlog is a GatsbyJS starter.",
-  siteUrl: "https://gatsby-starter-personal-blog.greglobinski.com",
+  siteTitle: "gyneco2d note", // <title>
+  shortSiteTitle: "gyneco2d note", // <title> ending for posts and pages
+  siteDescription: "gyneco2d note",
+  siteUrl: "https://gyneco2d.netlify.com",
   pathPrefix: "",
   siteImage: "preview.jpg",
-  siteLanguage: "en",
+  siteLanguage: "ja",
   // author
-  authorName: "greg lobinski",
-  authorTwitterAccount: "greglobinski",
+  authorName: "gyneco2d",
+  authorTwitterAccount: "gyneco2d",
   // info
-  infoTitle: "greg lobinski",
-  infoTitleNote: "personal blog",
+  infoTitle: "gyneco2d",
+  infoTitleNote: "personal note",
   // manifest.json
-  manifestName: "PersonalBlog - a blog starter for GatsbyJS",
-  manifestShortName: "PersonalBlog", // max 12 characters
+  manifestName: "gyneco2d note",
+  manifestShortName: "gyneco2d note", // max 12 characters
   manifestStartUrl: "/",
   manifestBackgroundColor: colors.background,
   manifestThemeColor: colors.background,
   manifestDisplay: "standalone",
   // contact
-  contactEmail: "john@doe.com",
+  contactEmail: "",
   // social
   authorSocialLinks: [
-    { name: "github", url: "https://github.com/greglobinski" },
-    { name: "twitter", url: "https://twitter.com/greglobinski" },
-    { name: "facebook", url: "http://facebook.com/greglobinski" }
+    { name: "github", url: "https://github.com/gyneco2d" },
+    { name: "twitter", url: "https://twitter.com/gyneco2d" }
+    // { name: "facebook", url: "http://facebook.com/greglobinski" }
   ]
 };
