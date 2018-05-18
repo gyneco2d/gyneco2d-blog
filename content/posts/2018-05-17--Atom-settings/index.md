@@ -8,7 +8,7 @@ cover: ../article_icons/settings.jpg
 `Atom > Config...`で以下を開く
 
 `config.cson`
-```CoffeeScript
+```coffeescript
 "*":
   core:
     # 追記 -----------------
