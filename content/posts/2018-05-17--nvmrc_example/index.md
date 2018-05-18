@@ -2,7 +2,7 @@
 title: .nvmrcの書き方
 subTitle: nodeのバージョンを書き込む
 category: development
-cover: settings.jpg
+cover: ../article_icons/settings.jpg
 ---
 
 Netlifyにこのサイトを設置するとき`.nvmrc`を用意する必要があったのでメモ．

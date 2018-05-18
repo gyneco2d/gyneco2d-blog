@@ -2,7 +2,7 @@
 title: Atomで拡張子ごとにシンタックスを指定する
 subTitle: jsxファイルをjsシンタックス，jadをjavaシンタックスで開く
 category: settings
-cover: settings.jpg
+cover: ../article_icons/settings.jpg
 ---
 
 `Atom > Config...`で以下を開く
