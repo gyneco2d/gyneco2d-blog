@@ -79,7 +79,7 @@ export PS1="\n\[\e[35m\]\u \[\e[36m\]\w$PS1_GIT_BRANCH\n\[\e[\$(exit-code-color)
 
 ## まとめ
 **(\`･ω ･´)b  kawaii**
-![unsplash.com](./kawaii_prompt.gif)
+<img src="kawaii_prompt.gif" width="100%">
 
 Gitのブランチが常に確認できるし，コマンド失敗するとプロンプトがｼｮﾎﾞｰﾝする．プロンプトを動的に変更するのは遊びでやったのだけど，npmでパッケージ入れたときとか，色々出力されてるけど結局成功したの？失敗したの？てときなどにパッとわかるので意外に便利．  
 
