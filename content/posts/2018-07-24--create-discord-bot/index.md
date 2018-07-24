@@ -138,6 +138,9 @@ end
 ```
 
 最後に，Botアカウントには反応したくないので`user.bot_account`が`false`のときのみ処理するとして，こんな感じになりました．
+
+> `bot_account`の判定部分，早期returnで返してしまいたかったんですが，エラー吐いてしまうので断念．無駄にネストが深い．というかRubyは`return`使うの邪道なんでしょうか．まだよくわかってない．
+
 ```ruby
 voice_state_update do |event|
   if !event.user.bot_account
