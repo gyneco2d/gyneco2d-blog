@@ -5,14 +5,14 @@ category: development
 cover: ../article_icons/discord.jpg
 ---
 
-`DiscordのBotを作る #1`の続きです．
+`DiscordのBotを作る #1`の続きです．  
 
 ## コード書く
-めでたく起動したのであとはWikiとかドキュメント参照してコード書きましょう．
+めでたく起動したのであとはWikiとかドキュメント参照してコード書きましょう．  
 - [Home · meew0/discordrb Wiki](https://github.com/meew0/discordrb/wiki)
 - [Module: Discordrb — Documentation for meew0/discordrb (master)](https://www.rubydoc.info/github/meew0/discordrb/Discordrb)
 
-イベントハンドラを追加するにはフィルタ属性のリストとブロックと共にそれぞれのメソッドを呼び出せばいいので，（Wikiより）
+イベントハンドラを追加するにはフィルタ属性のリストとブロックと共にそれぞれのメソッドを呼び出せばいいので，（Wikiより）  
 
 ```ruby
 require 'discordrb'
@@ -26,7 +26,7 @@ end
 bot.run
 ```
 
-こんな感じで記述すると，"Hey Bot!"というテキストに対して"Hi, {ユーザ名}"と返すようになります．（exampleでは与えてませんでしたが，botインスタンス生成時に`CLIENT_ID`も与えときましょう．）
+こんな感じで記述すると，"Hey Bot!"というテキストに対して"Hi, {ユーザ名}"と返すようになります．（exampleでは与えてませんでしたが，botインスタンス生成時に`CLIENT_ID`も与えときましょう．）  
 
 > 最初はいまいち何してるかわかりませんでした．ライブラリ読んでみると，`message`メソッドは`Discordrb::Commands::CommandBot`のスーパークラス`Discordrb::Bot`がincludeしている`Discordrb::EventContainer`モジュールで定義されていて，フィルタ属性とブロックを渡してイベントを登録してるのがわかります．Rubyはメソッド呼び出しの時に引数と一緒にブロック渡せるんですね．  
 > ```ruby
@@ -111,14 +111,14 @@ bot.voice_state_update do |event|
 end
 ```
 
-> `bot_account`の判定部分，早期returnで返してしまいたかったんですが，エラー吐いてしまうので断念．無駄にネストが深い．というかRubyは`return`使うの邪道なんでしょうか．まだよくわかってない．
+> `bot_account`の判定部分，早期returnで返してしまいたかったんですが，エラー吐いてしまうので断念．無駄にネストが深い．というかRubyは`return`使うの邪道なんでしょうか．まだよくわかってない．  
 
 ### チャンネルへの参加を通知． 誰か相手して('ω')!!!  
-<img src="images/notification.png">
+<img src="images/notification.png">  
 
 
 ## モジュールを使う
-大まかな機能毎にコード管理したかったのでmodule使ってコード分割します．
+大まかな機能毎にコード管理したかったのでmodule使ってコード分割します．  
 ディレクトリ構成は大体こんな感じ（GitHubでRubyのリポジトリ漁って~~パクり~~参考にしました．）
 
 ```bash
@@ -137,7 +137,8 @@ src
 4 directories, 5 files
 ```
 
-例えば，`general.rb`にはコマンド類を記述したいので，`CommandContainer`をextendしたモジュール作って内部に`#command`使ってコマンドを定義しときます．`#voice_state_update`の処理はコマンドではなくイベントが発生したら呼ぶ処理なので`join_announcer.rb`としてモジュール化しときます．
+例えば，`general.rb`にはコマンド類を記述したいので，`CommandContainer`をextendしたモジュール作って内部に`#command`使ってコマンドを定義しときます． `#voice_state_update`の処理はコマンドではなくイベントが発生したら呼ぶ処理なので`join_announcer.rb`としてモジュール化しときます．  
+
 ```ruby
 # general.rb
 require 'discordrb'
@@ -153,6 +154,7 @@ end
 ```
 
 これを`bot.rb`内で`CommandBot`のインスタンスBOTにincludeする．`bot.rb`はモジュールの読み込みと`BOT.run`のみ．  
+
 ```ruby
 def self.load_modules(cls, path)
   new_module = Module.new
@@ -168,9 +170,9 @@ load_modules(:Events, 'events')
 ```
 
 なるほどまとまりがいい(˘ω˘) ← ~~若干理解してない~~  
-`#load_modules`は指定したシンボルと読み込んだモジュールを記述したファイルから新しくモジュール作って`BOT`にincludeしてるんでしょか．`#include!`が調べてもいまいちわからないけど恐らくそんな感じ．
+`#load_modules`は指定したシンボルと読み込んだモジュールを記述したファイルから新しくモジュール作って`BOT`にincludeしてるんでしょか．`#include!`が調べてもいまいちわからないけど恐らくそんな感じ．  
 
-とにかくこれで今まで通り動作して機能追加もしやすくなりました．
+とにかくこれで今まで通り動作して機能追加もしやすくなりました．  
 
 ## まとめ
 取り敢えずボイスチャンネルへの参加をテキストチャンネルに通知するDiscord Botが作れました．  
@@ -179,7 +181,6 @@ load_modules(:Events, 'events')
 
 あと，ボイスチャンネルに参加したユーザ名を音声通知する機能も実装したんですが，ボイスチャンネルに人がいなくなったとき謎の警告を吐くのが解決してない&記事が長くなりすぎるのでまた今度まとめます．（GitHub上のリポジトリは音声通知まで実装してます．）  
 
-Bot作成，ちょっと書けばすぐ動くし簡単に機能追加できそうなのでおすすめです．たのしい．昔PHP向けのライブラリ使って作ろうとしたときはリファレンス禄に読めなくてやめちゃったんですが今やってみると割とｻｸｻｸ読めるようになって若干の成長を感じる．
-しかも，人の実装みて理解しようとすると学ぶことが多くて結構勉強になったのでよかったですね．  
+Bot作成，ちょっと書けばすぐ動くし簡単に機能追加できそうなのでおすすめです．たのしい．昔PHP向けのライブラリ使って作ろうとしたときはリファレンス禄に読めなくてやめちゃったんですが今やってみると割とｻｸｻｸ読めるようになって若干の成長を感じる．あと，人の実装みて理解しようとすると学ぶことが多くて結構勉強になったのでよかったですね．  
 
-あとはYoutubeからRSS拾って推しのVTuberの通知流してギルド内の人間に無理やり推しまくる機能とか実装したいですね...
+あとはYoutubeからRSS拾って推しのVTuberの通知流してギルド内の人間に無理やり推しまくる機能とか実装したいですね...  
