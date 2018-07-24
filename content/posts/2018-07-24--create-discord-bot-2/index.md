@@ -1,11 +1,11 @@
 ---
-title: '#2 DiscordのBotを作る'
+title: 'DiscordのBotを作る #2'
 subTitle: ボイスチャンネルへの参加を通知する
 category: development
 cover: ../article_icons/discord.jpg
 ---
 
-[\#1 DiscordのBotを作る](https://gyneco2d.netlify.com/create-discord-bot-1)の続きです．
+`DiscordのBotを作る #1`の続きです．
 
 ## コード書く
 めでたく起動したのであとはWikiとかドキュメント参照してコード書きましょう．

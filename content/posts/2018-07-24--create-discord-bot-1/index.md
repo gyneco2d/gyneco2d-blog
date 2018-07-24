@@ -1,5 +1,5 @@
 ---
-title: '#1 DiscordのBotを作る'
+title: 'DiscordのBotを作る #1'
 subTitle: Botの起動
 category: development
 cover: ../article_icons/discord.jpg
@@ -65,4 +65,4 @@ Using WSCS version: 0.3.0
 <img src="images/command.png">
 
 > 記事が長くなりすぎるとサイト内検索を実装してるAlgoliaのAPIが使えなくなるようなので記事分割．  
-> [次の記事](https://gyneco2d.netlify.com/create-discord-bot-2)へ続きます．
+> 次の記事（`DiscordのBotを作る #2`）へ続きます．
