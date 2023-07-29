@@ -42,6 +42,20 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          process.env.GOOGLE_ANALYTICS_ID
+        ],
+        gtagConfig: {
+          optimize_id: "OPT_CONTAINER_ID",
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {},
+      }
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/`,
@@ -119,7 +133,7 @@ const config: GatsbyConfig = {
   }
 }`,
             output: `rss.xml`,
-            title: `Minimal Blog - @lekoarts/gatsby-theme-minimal-blog`,
+            title: `gyneco2d note`,
           },
         ],
       },
