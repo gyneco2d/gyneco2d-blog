@@ -1,0 +1,23 @@
+---
+title: .nvmrcの書き方
+slug: "/nvmrc-example"
+date: 2018-05-17
+tags:
+  - development
+banner: ../common/settings.jpg
+---
+
+Netlifyにこのサイトを設置するとき`.nvmrc`を用意する必要があったのでメモ．
+nvmはNode.jsのバージョン管理ソフトウェアらしい．
+プロジェクト直下のディレクトリに`.nvmrc`があるとそれを見に行ってそのバージョンを利用してくれる．
+
+### 書式
+nodeのバージョンを書き込むだけでいいらしい
+
+```bash
+$ node -v > .nvmrc
+```
+
+参考：[.nvmrc example? · Issue #995 · creationix/nvm](https://github.com/creationix/nvm/issues/995)
+
+このバージョンがインストールされていない時はエラーが出るが，`nvm install && nvm use`できる．

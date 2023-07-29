@@ -1,0 +1,31 @@
+---
+title: Atomで拡張子ごとにシンタックスハイライトを指定する
+slug: "/atom-syntax-highlight"
+date: 2018-05-17
+tags:
+  - settings
+banner: ../common/settings.jpg
+---
+
+## jsxファイルをjs, jadをjavaとして解釈させる
+`Atom > Config...`で以下を開く
+
+`config.cson`
+```coffeescript
+"*":
+  core:
+    # 追記 -----------------
+    customFileTypes:
+        "source.js": [
+            "jsx"
+        ]
+        "source.java": [
+            "jad"
+        ]
+    # ----------------------
+    telemetryConsent: "limited"
+  editor:
+    tabLength: 4
+```
+
+`.jsx`ファイルがJavaScript，`.jad`ファイルがJavaとして開くようになる．
